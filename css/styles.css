@@ -175,6 +175,9 @@ body {
   line-height: 0;
 }
 @media screen and (min-width: 768px) {
+  .header-section {
+    padding: 0;
+  }
   .header-open-menu {
     display: none;
   }
@@ -217,7 +220,7 @@ body {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/hero-bg-mob-1x.jpg);
+    url(./images/hero-bg-mob-1x.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -312,7 +315,7 @@ body {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url();
+      url(../images/hero-bg-desk-2x.jpg);
   }
 }
 
@@ -624,19 +627,22 @@ body {
 /* Footer */
 
 .footer-section {
-  display: block;
   background-color: var(--navy-blue);
   padding-top: 100px;
   padding-bottom: 100px;
 }
 .footer-container {
-  margin: 0 auto;
   display: block;
-  display: flex;
+  /* display: flex; */
   align-items: baseline;
 }
 .footer-wrapper {
-  margin-right: 120px;
+  /* margin-right: 120px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0 auto;
 }
 
 .footer-logo {
@@ -665,9 +671,9 @@ body {
 .footer-social-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: baseline;
-
-  margin-right: 80px;
+  /* align-items: baseline; */
+  /* margin-right: 80px; */
+  margin-top: 72px;
 }
 .footer-social-name {
   font-family: Roboto;
@@ -677,6 +683,8 @@ body {
   line-height: calc(24 / 16);
   letter-spacing: 0.02em;
   margin-bottom: 16px;
+
+  text-align: center;
 }
 .footer-social-list {
   display: flex;
@@ -716,12 +724,17 @@ body {
   line-height: calc(24 / 16);
   letter-spacing: 0.02em;
   margin-bottom: 16px;
+
+  text-align: center;
+  margin-top: 72px;
 }
 .form-subscribe {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 24px;
+
+  flex-wrap: wrap;
 }
 .subscribe {
   display: flex;
@@ -763,6 +776,41 @@ body {
 .icon-subscribe {
   fill: var(--white-tx);
   margin-left: 16px;
+}
+@media screen and (min-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer-wrapper {
+    align-items: flex-start;
+    margin-right: 24px;
+  }
+  .footer-social-wrapper {
+    align-items: baseline;
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .footer-container {
+    flex-wrap: nowrap;
+  }
+  .footer-text {
+    margin-right: 120px;
+  }
+  .footer-social-wrapper {
+    margin-right: 80px;
+  }
+  .footer-social-name {
+    text-align: start;
+  }
+  .form-title {
+    text-align: start;
+    margin-bottom: 16px;
+  }
+  .form-subscribe {
+    flex-wrap: nowrap;
+  }
 }
 
 /* Modal Window */
